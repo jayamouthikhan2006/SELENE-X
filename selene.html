@@ -122,9 +122,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-feature-setting
 .std .card-body{position:absolute;left:0;right:0;bottom:0;padding:0 20px 18px;z-index:3;color:#fff}
 .std .card-body h3{font-size:19px;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
 .std .card-body p{font-size:13px;color:#e4e6ec;line-height:1.45}
-.std .card-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:22px}
-.std .card-foot .go{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:15px;transition:background .3s,color .3s,transform .3s}
-.std .card:hover .card-foot .go{background:#fff;color:#000;transform:translateX(3px)}
+.std .card-foot{display:flex;justify-content:flex-end;align-items:flex-end;margin-top:22px}
 .std .card-foot .tag{font-family:'Manrope',sans-serif;font-size:8.5px;letter-spacing:.22em;line-height:1.7;color:#c9cdd8;text-align:left;font-weight:600}
 .std .sensor{background:#eef0f4;color:var(--ink);min-height:470px;overflow:hidden;display:flex;align-items:center}
 .std .sensor-img{position:absolute;inset:0;background:url(assets/sensor.jpg) center/cover no-repeat}
@@ -185,7 +183,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-feature-setting
 .std .cta-content{position:relative;z-index:2;padding:48px var(--pad);max-width:620px}
 .std .cta-brand{font-size:15px;letter-spacing:.28em;margin-bottom:14px;font-weight:600;color:#fff}
 .std .cta-content h2{font-size:30px;line-height:1.18;letter-spacing:-.03em;color:#fff}
-.std .cta-content .desc{color:#d3d6dd;font-size:13.5px;max-width:520px;margin:12px 0 22px;line-height:1.65}
+.std .cta-content .desc{color:#d3d6dd;font-size:13.5px;max-width:520px;margin:12px 0 0;line-height:1.65}
 .std .cta-content .btn-blue{background:#9ecbff;color:#0b1a2e;padding:12px 24px}
 .std .cta-content .btn-blue:hover{background:#b3d7ff}
 .std .cta-content .btn-outline{border-color:rgba(255,255,255,.4);background:rgba(10,12,18,.55);padding:12px 24px}
@@ -328,7 +326,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-feature-setting
   transition:transform .6s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .6s}
 .std .pillar::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
   background:linear-gradient(160deg,rgba(160,195,255,.45),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 70%,rgba(160,195,255,.25));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
   opacity:0;transition:opacity .5s;pointer-events:none;z-index:3}
 .std .pillar::after{content:"";position:absolute;inset:0;border-radius:inherit;
   background:radial-gradient(240px circle at var(--mx,50%) var(--my,30%),rgba(150,185,255,.14),transparent 60%);
@@ -347,9 +347,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;font-feature-setting
 .std .pillar:hover>i{transform:translateY(-4px);border-color:rgba(170,200,255,.5);box-shadow:0 14px 28px rgba(0,0,0,.5),0 0 24px rgba(120,160,255,.35),inset 0 1px 0 rgba(255,255,255,.18)}
 .std .pillar h3{font-family:'Manrope',sans-serif;font-size:17px;font-weight:600;letter-spacing:-.02em;color:#fff;margin:18px 20px 8px;position:relative;z-index:3}
 .std .pillar p{font-size:12.5px;color:#b9bdc8;line-height:1.55;margin:0 20px 22px;position:relative;z-index:3;flex:1}
-.std .pillar-foot{display:flex;align-items:center;justify-content:space-between;margin:0 20px 18px;position:relative;z-index:3}
-.std .pillar .go{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:13px;transition:background .35s,color .35s,transform .35s,border-color .35s}
-.std .pillar:hover .go{background:#fff;color:#000;border-color:#fff;transform:translateX(4px)}
+.std .pillar-foot{display:flex;align-items:center;justify-content:flex-end;margin:0 20px 18px;position:relative;z-index:3}
 .std .pillar .idx{font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.3em;color:#6d717d;transition:color .3s}
 .std .pillar:hover .idx{color:#b8c6ea}
 .std .hardware{position:relative;min-height:600px;padding:44px var(--pad) 48px;background:#06070a;overflow:hidden}
@@ -583,7 +581,6 @@ html{scroll-behavior:smooth}
 .arch .reveal-stagger>*:nth-child(6){transition-delay:.4s}
 .arch .reveal-stagger>*:nth-child(7){transition-delay:.47s}
 .arch .reveal-stagger>*:nth-child(8){transition-delay:.54s}
-.arch .layer-img.reveal{transform:none}
 @media (max-width:1100px){.arch{--pad:36px}
 .arch .stack-text{padding:80px 60px 70px 48px}
 .arch .ahero h1{font-size:52px}}
@@ -619,6 +616,236 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){.arch *{animation:none!important;transition:none!important}
 .arch .reveal,.arch .reveal-stagger>*,.arch .ahero-content>*,.arch .ahero-side,.arch .ahero-powered{opacity:1;transform:none}}
 
+/* ===== mobile foundations + motion layer ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px}
+body{overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.std,.arch{overflow-x:clip}
+img,svg,video,canvas{max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* --- scroll progress rail (desktop + mobile) --- */
+.progress{position:fixed;left:0;top:0;height:2px;width:100%;z-index:60;pointer-events:none;
+  transform:scaleX(0);transform-origin:0 50%;will-change:transform;
+  background:linear-gradient(90deg,#8ec5ff,#cfe1ff)}
+body[data-page="architecture"] .progress{background:linear-gradient(90deg,#c9a879,#f4f1eb)}
+
+/* --- parallax layers --- */
+.px{top:-10%!important;bottom:-10%!important;height:auto!important;transition:none!important;will-change:transform;backface-visibility:hidden}
+
+/* --- richer reveal variants --- */
+.std .reveal,.arch .reveal{will-change:opacity,transform}
+.reveal[data-rv="left"]{transform:translateX(-34px)}
+.reveal[data-rv="right"]{transform:translateX(34px)}
+.reveal[data-rv="scale"]{transform:scale(.94)}
+.reveal[data-rv].in{transform:none}
+.reveal-stagger>*{will-change:opacity,transform}
+.std .reveal-stagger.in>*:nth-child(8){transition-delay:.75s}
+.std .reveal-stagger.in>*:nth-child(9){transition-delay:.85s}
+
+/* --- hamburger button --- */
+.navtoggle{display:none;position:relative;z-index:55;width:44px;height:44px;margin-right:-10px;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;border-radius:12px;
+  transition:background .3s}
+.navtoggle:active{background:rgba(255,255,255,.08)}
+.navtoggle span{display:block;width:20px;height:1.5px;background:#fff;border-radius:2px;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .25s}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* --- mobile drawer --- */
+.mnav{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;justify-content:center;
+  padding:0 clamp(22px,7vw,44px);background:rgba(6,7,10,.97);
+  -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility .35s}
+.mnav.arch{background:rgba(5,5,5,.97)}
+.mnav.open{opacity:1;visibility:visible;transform:none}
+.mnav .mnav-head{position:absolute;left:clamp(22px,7vw,44px);top:26px;font-family:'Manrope',sans-serif;
+  font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:#7e818b}
+.mnav a{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:16px 2px;font-family:'Manrope',sans-serif;font-size:clamp(21px,6.4vw,30px);font-weight:300;
+  letter-spacing:-.01em;color:#f2f3f6;border-bottom:1px solid rgba(255,255,255,.08);
+  opacity:0;transform:translateY(16px);
+  transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1),color .25s}
+.mnav a::after{content:"\2192";font-size:15px;color:#6f727c;transition:transform .3s,color .3s}
+.mnav a:active{color:#8ec5ff}
+.mnav a:active::after{transform:translateX(5px);color:#8ec5ff}
+.mnav.arch a{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(26px,7.4vw,36px)}
+.mnav.open a{opacity:1;transform:none}
+.mnav.open a:nth-child(1){transition-delay:.08s}
+.mnav.open a:nth-child(2){transition-delay:.14s}
+.mnav.open a:nth-child(3){transition-delay:.2s}
+.mnav.open a:nth-child(4){transition-delay:.26s}
+.mnav.open a:nth-child(5){transition-delay:.32s}
+.mnav.open a:nth-child(6){transition-delay:.38s}
+.mnav.open a:nth-child(7){transition-delay:.44s}
+.mnav-foot{position:absolute;left:clamp(22px,7vw,44px);right:clamp(22px,7vw,44px);bottom:30px;
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#63666f;
+  opacity:0;transition:opacity .5s ease .5s}
+.mnav.open .mnav-foot{opacity:1}
+body.menu-open{position:fixed;left:0;right:0;width:100%;overflow:hidden;overscroll-behavior:none}
+
+/* --- no sticky hover on touch; give touch users the same payoff on scroll-in --- */
+@media (hover:none){
+  .std .card:hover,.std .pillar:hover,.std .adapt:hover,.std .model-item:hover,
+  .std .sensor-icons div:hover,.arch .sensor-grid li:hover i{transform:none}
+  .std .card:hover::after{opacity:1}
+  .std .pillar-grid.in .pillar::before{opacity:.75}
+  .std .card-grid.in .card::before{opacity:.5;background:radial-gradient(180px circle at 50% 18%,rgba(255,255,255,.10),transparent 62%)}
+  .std .btn-light:hover,.std .btn-blue:hover{transform:none}
+}
+
+/* ================= <= 1100px ================= */
+@media (max-width:1100px){
+  .std .hardware-body{gap:28px}
+  .arch .stack-text{padding:72px 48px 64px 40px}
+}
+
+/* ================= <= 820px : tablet / large phone ================= */
+@media (max-width:820px){
+  html{scroll-padding-top:70px}
+  .std .nav{position:fixed;height:62px}
+  .std .nav-scrolled{height:56px}
+  .arch .anav{height:60px}
+  .navtoggle{display:flex}
+  .std .nav>.btn,.arch .anav>.pill{display:none}
+
+  /* home hero */
+  .std .hero{height:auto;min-height:520px;min-height:min(78svh,620px);
+    display:flex;align-items:flex-end;padding:118px 0 50px}
+  .std .hero-bg{background-position:60% center}
+  .std .hero-content{position:relative;top:auto;bottom:auto;width:100%;padding:0 var(--pad);max-width:none}
+  .std .hero-title{font-size:clamp(24px,7.2vw,34px);letter-spacing:.2em;line-height:1.4}
+  .std .hero-sub{margin-top:20px;gap:16px;font-size:10.5px;letter-spacing:.3em}
+  .std .hero-sub .rule{flex:1 1 auto;max-width:140px}
+  .std .hero-tag{display:none}
+
+  /* type scale */
+  .std h2{font-size:24px}
+  .std .vision-text h2,.std .sensor-text h2{font-size:clamp(26px,7vw,34px)}
+  .std .section-head h2{font-size:clamp(27px,7.4vw,34px)}
+  .std .section-head .desc,.std .vision-text .desc,.std .sensor-text .desc{font-size:13.5px}
+  .std .cta-content h2{font-size:clamp(24px,6.6vw,30px)}
+  .std .vision-text,.std .sensor-text{padding:52px var(--pad)}
+  .std .usecases{padding:46px var(--pad) 50px}
+  .std .cta-content{padding:52px var(--pad);max-width:none}
+
+  /* technology */
+  .std .thero{min-height:470px;min-height:min(74svh,600px);
+    align-items:flex-end;padding:104px 0 50px}
+  .std .thero-content{width:100%;padding:0 var(--pad);max-width:none}
+  .std .thero h1{font-size:clamp(28px,8vw,38px)}
+  .std .thero .desc{font-size:13px;max-width:none}
+  .std .hardware{min-height:0;padding:40px var(--pad) 44px}
+  .std .hardware-body{flex-direction:column;gap:24px}
+  .std .spec-panel{width:100%;min-width:0;max-width:none}
+  .std .pillars{padding:38px var(--pad) 42px}
+
+  /* architecture */
+  .arch .ahero{height:auto;min-height:520px;min-height:min(80svh,640px);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:118px 0 56px}
+  .arch .ahero h1{font-size:clamp(32px,9vw,44px)}
+  .arch .ahero-powered{position:static;text-align:left;margin-top:34px;padding:0 var(--pad)}
+  .arch .layer-title{font-size:22px}
+  .arch .layer-sub{font-size:18px}
+  .arch .pipeline-text{max-width:none}
+  .arch .aclose{padding:80px 0}
+  .arch .ring-phone{position:relative;left:auto;top:auto;transform:none;width:auto;margin:36px auto 0}
+  .arch .ring{width:120px;height:120px;margin-bottom:24px}
+  .arch .ring-phone p{font-size:20px}
+  .arch .verbs{display:none}
+  .arch .pager,.arch .img-tag{display:none}
+
+  /* comfortable tap targets */
+  .std .footer-links a,.arch .afoot-links a{min-height:40px;display:flex;align-items:center;justify-content:center}
+  .arch .social a{width:24px;height:24px}
+  .std .btn,.arch .pill{min-height:42px}
+}
+
+/* ================= <= 620px : phone ================= */
+@media (max-width:620px){
+  :root{--pad:18px}
+  .arch{--pad:18px}
+  html{scroll-padding-top:64px}
+
+  /* one-up cards read far better than cramped 2-up */
+  .std .card-grid{grid-template-columns:1fr;gap:12px}
+  .std .card{aspect-ratio:16/10}
+  .std .card-body{padding:0 18px 16px}
+  .std .card-body h3{font-size:18px}
+  .std .card-foot{margin-top:14px}
+  .std .pillar-grid{grid-template-columns:1fr;gap:12px}
+  .std .pillar-img{height:170px}
+  .std .pillar h3{margin:16px 18px 6px}
+  .std .pillar p{margin:0 18px 18px}
+  .std .pillar-foot{margin:0 18px 16px}
+  .arch .cards,.arch .app-cards{grid-template-columns:1fr;max-width:none}
+  .arch .sensor-grid{grid-template-columns:repeat(2,1fr);gap:26px 12px;margin-top:34px}
+
+  /* layout breathing room */
+  .std .vision-features{gap:22px 30px}
+  .std .sensor-icons{gap:20px 26px;margin-top:32px}
+  .std .models-text{padding:26px var(--pad)}
+  .std .models-list{padding:14px var(--pad)}
+  .std .model-item i{width:40px;height:40px}
+  .std .model-item svg{width:24px;height:24px}
+  .std .impact-stats{gap:14px 26px}
+  .std .impact-stats div{flex:1 1 40%}
+  .std .btn-row{gap:10px}
+  .std .btn{padding:11px 18px;font-size:11.5px}
+  .std .btn-sm{padding:8px 14px}
+  .std .spec{padding:14px 16px;gap:13px}
+  .std .spec i{width:42px;height:42px}
+  .std .adaptive{padding:34px var(--pad) 30px}
+  .std .adapt{padding:18px;gap:14px}
+  .std .tclose h2{font-size:15px;letter-spacing:.2em}
+  .std .tclose{min-height:200px;padding-bottom:28px}
+  .std .footer{padding:24px var(--pad)}
+
+  .arch .stack-text{padding:46px var(--pad)}
+  .arch .stack h2{font-size:clamp(26px,8vw,34px)}
+  .arch .stack-img{min-height:230px}
+  .arch .layer-text{padding:52px var(--pad) 48px}
+  .arch .layer-img{min-height:250px}
+  .arch .layer-sensor .layer-text,.arch .layer-app .layer-text{padding-top:58%}
+  .arch .pipeline{padding:64px var(--pad) 52px}
+  .arch .pipeline h2{font-size:clamp(26px,8vw,32px)}
+  .arch .aclose h2{font-size:clamp(28px,8.6vw,36px)}
+  .arch .aclose .lead{font-size:14px}
+  .arch .afoot{padding:36px var(--pad) 26px}
+  .arch .copy{margin-top:28px}
+  .arch .pill-row{gap:10px;margin:24px 0 28px}
+}
+
+/* ================= <= 400px : small phone ================= */
+@media (max-width:400px){
+  .std .hero{padding-top:106px;padding-bottom:40px}
+  .std .hero-sub .rule{max-width:70px}
+  .std .vision-features{flex-direction:column;gap:18px}
+  .std .sensor-icons div{min-width:64px}
+  .arch .sensor-grid{grid-template-columns:1fr;gap:20px;text-align:left}
+  .arch .sensor-grid i{margin:0 0 10px}
+  .std .btn-row{flex-direction:column;align-items:stretch}
+  .std .btn-row .btn{justify-content:center}
+  .arch .pill-row{flex-direction:column;align-items:stretch}
+  .arch .pill{justify-content:center}
+}
+
+/* --- landscape phones: don't let heroes eat the screen --- */
+@media (max-width:900px) and (max-height:520px) and (orientation:landscape){
+  .std .hero,.std .thero,.arch .ahero{padding-top:92px;padding-bottom:36px;min-height:0;height:auto}
+  .mnav{justify-content:flex-start;padding-top:72px;overflow-y:auto}
+  .mnav a{padding:11px 2px;font-size:19px}
+  .mnav .mnav-foot{position:static;margin-top:20px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .progress{display:none}
+  .px{transform:none!important}
+  .reveal[data-rv]{transform:none!important}
+}
+
 /* ===== single-file page router ===== */
 .page{display:none}
 .page.is-active{display:block}
@@ -639,7 +866,6 @@ html{scroll-behavior:smooth}
     <a href="#home" data-goto="home" data-scroll="safety">Safety</a>
     <a href="#home" data-goto="home" data-scroll="about">About</a>
   </nav>
-  <a href="#home" data-goto="home" class="btn btn-light btn-sm">Experience SELENE <span class="arrow">→</span></a>
 </header>
 
 <!-- ================= HERO ================= -->
@@ -659,7 +885,7 @@ html{scroll-behavior:smooth}
 <!-- ================= VISION ================= -->
 <section class="vision" id="about">
   <div class="vision-img"></div>
-  <div class="vision-text reveal">
+  <div class="vision-text reveal" data-rv="left">
     <p class="eyebrow dark">THE VISION</p>
     <h2>More than a smartphone.<br>A companion that understands.</h2>
     <p class="desc">SELENE transforms the iQOO 15 into a continuously aware, context-driven AI companion. It fuses multiple sensors, runs fully on-device AI models, and understands your world — so you don't have to explain it.</p>
@@ -691,7 +917,6 @@ html{scroll-behavior:smooth}
       <p class="desc">From your daily commute to unexpected situations, SELENE stays aware, understands your context and helps you take the right action.</p>
     </div>
     <div class="section-head-right">
-      <a href="#home" data-goto="home" class="btn btn-outline">Explore Use Cases <span class="arrow">→</span></a>
       <p class="side-tag">A<br>SMARTER<br>YOU<br>EVERYWHERE</p>
     </div>
   </div>
@@ -700,35 +925,35 @@ html{scroll-behavior:smooth}
       <i><svg viewBox="0 0 24 24"><path d="M3 13l2-5.5A1.5 1.5 0 0 1 6.4 6.5h11.2a1.5 1.5 0 0 1 1.4 1L21 13v5H3z"/><path d="M3 13h18M6.5 18v2M17.5 18v2"/><circle cx="7.5" cy="15.5" r=".8"/><circle cx="16.5" cy="15.5" r=".8"/></svg></i>
       <div class="card-body">
         <h3>On the Move</h3><p>Smarter travel<br>and navigation</p>
-        <div class="card-foot"><span class="go">→</span><span class="tag">SAFER<br>FASTER<br>SMOOTHER</span></div>
+        <div class="card-foot"><span class="tag">SAFER<br>FASTER<br>SMOOTHER</span></div>
       </div>
     </a>
     <a href="#home" data-goto="home" class="card" style="--img:url(assets/case2.jpg)">
       <i><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.2"/><path d="M2 19h20"/></svg></i>
       <div class="card-body">
         <h3>At Work or College</h3><p>Contextual productivity<br>and assistance</p>
-        <div class="card-foot"><span class="go">→</span><span class="tag">FOCUS<br>ORGANISE<br>ACHIEVE</span></div>
+        <div class="card-foot"><span class="tag">FOCUS<br>ORGANISE<br>ACHIEVE</span></div>
       </div>
     </a>
     <a href="#home" data-goto="home" class="card" style="--img:url(assets/case3.jpg)">
       <i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.6-3.4 7.8-8 9-4.6-1.2-8-4.4-8-9V6z"/><path d="M12 8.5v4M12 15.5v.3"/></svg></i>
       <div class="card-body">
         <h3>In Unsafe Situations</h3><p>Real-time detection<br>and alerts</p>
-        <div class="card-foot"><span class="go">→</span><span class="tag">AWARE<br>ALERT<br>PROTECT</span></div>
+        <div class="card-foot"><span class="tag">AWARE<br>ALERT<br>PROTECT</span></div>
       </div>
     </a>
     <a href="#home" data-goto="home" class="card" style="--img:url(assets/case4.jpg)">
       <i><svg viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M5 9.5A12 12 0 0 1 8.4 7.4M8.5 13a7 7 0 0 1 2.6-1.5M12 17.5h.01M15.6 13a7 7 0 0 0-1.4-1.1M19 9.5a12 12 0 0 0-6-2.9"/></svg></i>
       <div class="card-body">
         <h3>Offline Environments</h3><p>Reliable intelligence<br>even without network</p>
-        <div class="card-foot"><span class="go">→</span><span class="tag">ADAPT<br>CONTINUE<br>STAY INFORMED</span></div>
+        <div class="card-foot"><span class="tag">ADAPT<br>CONTINUE<br>STAY INFORMED</span></div>
       </div>
     </a>
     <a href="#home" data-goto="home" class="card" style="--img:url(assets/case5.jpg)">
       <i><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c0-3.8 3.4-6.2 7.5-6.2s7.5 2.4 7.5 6.2"/></svg></i>
       <div class="card-body">
         <h3>Everyday Life</h3><p>A more helpful<br>personal companion</p>
-        <div class="card-foot"><span class="go">→</span><span class="tag">UNDERSTAND<br>SUPPORT<br>GROW WITH YOU</span></div>
+        <div class="card-foot"><span class="tag">UNDERSTAND<br>SUPPORT<br>GROW WITH YOU</span></div>
       </div>
     </a>
   </div>
@@ -737,7 +962,7 @@ html{scroll-behavior:smooth}
 <!-- ================= SENSOR FUSION ================= -->
 <section class="sensor" id="features">
   <div class="sensor-img"></div>
-  <div class="sensor-text reveal">
+  <div class="sensor-text reveal" data-rv="left">
     <p class="eyebrow dark">SENSOR FUSION</p>
     <h2>A deeper understanding<br>of your world</h2>
     <p class="desc">Combines motion, location, vision, sound, connectivity, battery and device activity into one situational model. It's not just what you say — it's what's happening around you.</p>
@@ -765,7 +990,7 @@ html{scroll-behavior:smooth}
 <!-- ================= MULTI-MODEL AI ================= -->
 <section class="models" id="technology">
   <div class="models-img"></div>
-  <div class="models-text reveal">
+  <div class="models-text reveal" data-rv="right">
     <p class="eyebrow">MULTI-MODEL AI</p>
     <h2>The right intelligence<br>for the right moment</h2>
     <p class="desc">Specialized on-device models work together to deliver faster, more efficient and more reliable assistance.</p>
@@ -798,7 +1023,7 @@ html{scroll-behavior:smooth}
 <!-- ================= PRIVACY + SAFETY ================= -->
 <section class="split" id="safety">
   <div class="split-left">
-    <div class="split-text reveal">
+    <div class="split-text reveal" data-rv="left">
       <p class="eyebrow dark">PRIVACY BY DESIGN</p>
       <h2>Your data stays on<br>your device</h2>
       <p class="desc">SELENE is built to keep your information private, with on-device processing and user-controlled learning.</p>
@@ -806,7 +1031,7 @@ html{scroll-behavior:smooth}
     </div>
   </div>
   <div class="split-right">
-    <div class="split-text reveal">
+    <div class="split-text reveal" data-rv="right">
       <p class="eyebrow">A SAFER TOMORROW</p>
       <h2>More confidence<br>in every journey</h2>
       <p class="desc">Detects potential risks, provides timely alerts and helps you stay prepared — on roads, in cities or off the grid.</p>
@@ -833,14 +1058,10 @@ html{scroll-behavior:smooth}
 <!-- ================= CTA ================= -->
 <section class="cta">
   <div class="cta-bg"></div>
-  <div class="cta-content reveal">
+  <div class="cta-content reveal" data-rv="left">
     <p class="cta-brand">SELENE</p>
     <h2>Be part of a more aware world</h2>
     <p class="desc">Experience a smartphone that understands, protects and supports you — everywhere life takes you.</p>
-    <div class="btn-row">
-      <a href="#home" data-goto="home" class="btn btn-blue">Get Started <span class="arrow">→</span></a>
-      <a href="#home" data-goto="home" class="btn btn-outline">Watch the Full Film <span class="play"></span></a>
-    </div>
   </div>
   <p class="side-tag cta-tag">SAME<br>HORIZON<br>A SMARTER<br>TOMORROW</p>
 </section>
@@ -895,31 +1116,31 @@ html{scroll-behavior:smooth}
       <div class="pillar-img" style="background-image:url(assets/pillar1.jpg)"></div>
       <i><svg viewBox="0 0 24 24"><path d="M3 13l2-5.5A1.5 1.5 0 0 1 6.4 6.5h11.2a1.5 1.5 0 0 1 1.4 1L21 13v5H3z"/><path d="M3 13h18M6.5 18v2M17.5 18v2"/><circle cx="7.5" cy="15.5" r=".8"/><circle cx="16.5" cy="15.5" r=".8"/></svg></i>
       <h3>Sensing</h3><p>Understands your<br>environment in real time</p>
-      <div class="pillar-foot"><span class="go">→</span><span class="idx">01</span></div>
+      <div class="pillar-foot"><span class="idx">01</span></div>
     </a>
     <a href="#technology" data-goto="technology" class="pillar">
       <div class="pillar-img" style="background-image:url(assets/pillar2.jpg)"></div>
       <i><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><rect x="10" y="10" width="4" height="4" rx=".5"/><path d="M9 3v4M12 3v4M15 3v4M9 17v4M12 17v4M15 17v4M3 9h4M3 12h4M3 15h4M17 9h4M17 12h4M17 15h4"/></svg></i>
       <h3>On-Device Intelligence</h3><p>Fast, private and<br>personalized AI</p>
-      <div class="pillar-foot"><span class="go">→</span><span class="idx">02</span></div>
+      <div class="pillar-foot"><span class="idx">02</span></div>
     </a>
     <a href="#technology" data-goto="technology" class="pillar">
       <div class="pillar-img" style="background-image:url(assets/pillar3.jpg)"></div>
       <i><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.6-3.4 7.8-8 9-4.6-1.2-8-4.4-8-9V6z"/><path d="M12 8.5v4M12 15.5v.3"/></svg></i>
       <h3>Safety</h3><p>Proactive alerts and<br>real-time protection</p>
-      <div class="pillar-foot"><span class="go">→</span><span class="idx">03</span></div>
+      <div class="pillar-foot"><span class="idx">03</span></div>
     </a>
     <a href="#technology" data-goto="technology" class="pillar">
       <div class="pillar-img" style="background-image:url(assets/pillar4.jpg)"></div>
       <i><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 8a4 4 0 0 1 0 10H7z"/></svg></i>
       <h3>Seamless Connectivity</h3><p>Works online and offline</p>
-      <div class="pillar-foot"><span class="go">→</span><span class="idx">04</span></div>
+      <div class="pillar-foot"><span class="idx">04</span></div>
     </a>
     <a href="#technology" data-goto="technology" class="pillar">
       <div class="pillar-img" style="background-image:url(assets/pillar5.jpg)"></div>
       <i><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c0-3.8 3.4-6.2 7.5-6.2s7.5 2.4 7.5 6.2"/></svg></i>
       <h3>Human-Centric Design</h3><p>Intuitive, minimal<br>and meaningful</p>
-      <div class="pillar-foot"><span class="go">→</span><span class="idx">05</span></div>
+      <div class="pillar-foot"><span class="idx">05</span></div>
     </a>
   </div>
 </section>
@@ -1013,8 +1234,8 @@ html{scroll-behavior:smooth}
 
 <!-- ================= STACK INTRO ================= -->
 <section class="stack" id="stack">
-  <div class="stack-img reveal"></div>
-  <div class="stack-text reveal">
+  <div class="stack-img reveal" data-rv="scale"></div>
+  <div class="stack-text reveal" data-rv="right">
     <p class="kicker">BUILT FROM THE GROUND UP</p>
     <h2>A closer look at<br>the SELENE stack.</h2>
     <p class="lead">Three tightly integrated layers working together to<br>turn raw sensor data into meaningful, life-saving actions.</p>
@@ -1042,7 +1263,7 @@ html{scroll-behavior:smooth}
       <li><i><svg viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2"/><path d="M8.5 7.5l1.5-2.5h4l1.5 2.5"/><circle cx="12" cy="13.5" r="3"/></svg></i><strong>Camera</strong><span>injuries, road signs, documents, thief capture</span></li>
     </ul>
   </div>
-  <div class="layer-img reveal">
+  <div class="layer-img reveal" data-rv="scale">
     <p class="tag img-tag tr">EVERY SIGNAL<br>HAS A STORY.</p>
     <div class="pager"><span>01 / 03</span><a href="#architecture" data-goto="architecture" data-scroll="stack" class="circ">‹</a><a href="#architecture" data-goto="architecture" data-scroll="ai" class="circ">›</a></div>
   </div>
@@ -1050,7 +1271,7 @@ html{scroll-behavior:smooth}
 
 <!-- ================= 02 AI LAYER ================= -->
 <section class="layer layer-ai" id="ai">
-  <div class="layer-img reveal">
+  <div class="layer-img reveal" data-rv="scale">
     <ul class="verbs">
       <li>SENSE</li><li>FUSE</li><li>UNDERSTAND</li><li>REASON</li><li>ACT</li><li>LEARN</li>
     </ul>
@@ -1085,7 +1306,7 @@ html{scroll-behavior:smooth}
       <div class="card"><i><svg viewBox="0 0 24 24"><path d="M10 12V8.964M14 12V8.964M15 12a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2a1 1 0 0 1 1-1z"/><path d="M8.5 21H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-2"/></svg></i><div><strong>Smart Living</strong><span>IR appliance control, context-aware focus</span></div></div>
     </div>
   </div>
-  <div class="layer-img reveal">
+  <div class="layer-img reveal" data-rv="scale">
     <p class="tag img-tag br">GUIDANCE<br>PROTECTION<br>PRODUCTIVITY<br>PEACE OF MIND</p>
   </div>
 </section>
@@ -1093,7 +1314,7 @@ html{scroll-behavior:smooth}
 <!-- ================= PIPELINE ================= -->
 <section class="pipeline">
   <div class="pipeline-bg"></div>
-  <div class="pipeline-text reveal">
+  <div class="pipeline-text reveal" data-rv="left">
     <h2>From raw data<br>to real help.</h2>
     <p class="layer-desc">A continuous on-device pipeline that senses, fuses,<br>understands, reasons, acts and learns.</p>
   </div>
@@ -1140,22 +1361,300 @@ html{scroll-behavior:smooth}
 </div>
 
 <script>
-
 const PAGES = ['home','technology','architecture'];
-const inits = {};
+const mqReduce = matchMedia('(prefers-reduced-motion: reduce)');
+const mqCoarse = matchMedia('(hover: none)');
+const reduced = () => mqReduce.matches;
+
+/* ---------- one rAF-throttled scroll loop for the whole site ---------- */
+const onScroll = (() => {
+  const fns = []; let queued = false;
+  const run = () => { queued = false; const y = scrollY || 0; for (const f of fns) f(y); };
+  const kick = () => { if (queued) return; queued = true; requestAnimationFrame(run); };
+  addEventListener('scroll', kick, { passive: true });
+  addEventListener('resize', kick, { passive: true });
+  addEventListener('orientationchange', () => setTimeout(kick, 120), { passive: true });
+  return fn => { fns.push(fn); kick(); };
+})();
+
+/* ---------- scroll progress rail ---------- */
+const progress = document.createElement('div');
+progress.className = 'progress';
+document.body.appendChild(progress);
+onScroll(y => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+});
+
+/* ---------- scroll reveal (shared by all three pages) ---------- */
+const revealIO = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    if (!e.isIntersecting) continue;
+    e.target.classList.add('in');
+    revealIO.unobserve(e.target);
+  }
+}, { threshold: 0.04, rootMargin: '0px 0px -8% 0px' });
+
+function wireReveals(root){
+  root.querySelectorAll('.reveal,.reveal-stagger').forEach(el => {
+    if (el.dataset.rvOn) return;
+    el.dataset.rvOn = '1';
+    if (reduced()) { el.classList.add('in'); return; }
+    revealIO.observe(el);
+  });
+}
+
+/* ---------- element-anchored parallax ---------- */
+const PX_LAYERS = [
+  ['.hero-bg', .16], ['.thero-bg', .12], ['.ahero-bg', .14],
+  ['.vision-img', .07], ['.sensor-img', .07], ['.models-img', .06],
+  ['.hardware-bg', .08], ['.finale-bg', .06],
+  ['.cta-bg', .09], ['.pipeline-bg', .09], ['.aclose-bg', .09]
+];
+
+function wireParallax(root, pageName){
+  if (reduced()) return;
+  const items = [];
+  for (const [sel, base] of PX_LAYERS){
+    root.querySelectorAll(sel).forEach(el => {
+      const host = el.parentElement;
+      if (!host) return;
+      el.classList.add('px');
+      const item = { el, host, f: base, ready: true };
+      // heroes run an entry zoom on the same transform -- wait it out
+      const anim = getComputedStyle(el).animationName;
+      if (anim && anim !== 'none'){
+        item.ready = false;
+        const go = () => { item.ready = true; el.style.animation = 'none'; };
+        el.addEventListener('animationend', go, { once: true });
+        setTimeout(go, 3000);
+      }
+      items.push(item);
+    });
+  }
+  if (!items.length) return;
+  const damp = mqCoarse.matches ? .55 : 1;   // gentler on phones
+  onScroll(() => {
+    if (document.body.dataset.page !== pageName) return;
+    const vh = innerHeight;
+    for (const it of items){
+      if (!it.ready) continue;
+      const r = it.host.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) continue;
+      const mid = r.top + r.height / 2 - vh / 2;
+      it.el.style.transform = 'translate3d(0,' + (-mid * it.f * damp).toFixed(2) + 'px,0)';
+    }
+  });
+}
+
+/* ---------- hero copy drifts + fades as you leave it ---------- */
+function wireHeroDrift(root, pageName, sel){
+  if (reduced()) return;
+  const el = root.querySelector(sel);
+  if (!el) return;
+  const host = el.closest('section');
+  onScroll(y => {
+    if (document.body.dataset.page !== pageName) return;
+    const h = (host ? host.offsetHeight : innerHeight) || innerHeight;
+    if (y > h) { if (el.style.opacity !== '0') el.style.opacity = '0'; return; }
+    const p = y / h;
+    el.style.transform = 'translate3d(0,' + (y * .09).toFixed(2) + 'px,0)';
+    el.style.opacity = String(Math.max(0, 1 - p * 1.35));
+  });
+}
+
+/* ---------- sticky-glass header ---------- */
+function wireNav(root, pageName, sel, cls){
+  const nav = root.querySelector(sel);
+  if (!nav) return;
+  onScroll(y => {
+    if (document.body.dataset.page !== pageName) return;
+    nav.classList.toggle(cls, y > 40);
+  });
+}
+
+/* ---------- number counters ---------- */
+const countIO = new IntersectionObserver(entries => {
+  for (const e of entries){
+    if (!e.isIntersecting) continue;
+    countIO.unobserve(e.target);
+    const el = e.target, to = +el.dataset.to;
+    if (reduced()) { el.textContent = to; continue; }
+    const t0 = performance.now();
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / 1400), k = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * k);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+}, { threshold: .5 });
+
+/* ---------- pointer glow (mouse only) ---------- */
+function wireGlow(root, sel){
+  if (mqCoarse.matches) return;
+  root.querySelectorAll(sel).forEach(c => c.addEventListener('mousemove', e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, { passive: true }));
+}
+
+/* ---------- mobile drawer ---------- */
+const MENU = [
+  ['Home', 'home', ''],
+  ['Features', 'home', 'features'],
+  ['Use Cases', 'home', 'use-cases'],
+  ['Technology', 'technology', ''],
+  ['Architecture', 'architecture', ''],
+  ['Safety', 'home', 'safety'],
+  ['About', 'home', 'about']
+];
+
+// One shared drawer, mounted on <body>: a header with backdrop-filter becomes the
+// containing block for position:fixed children, which would trap it inside the bar.
+const drawer = document.createElement('div');
+drawer.className = 'mnav';
+drawer.innerHTML =
+  '<p class="mnav-head">SELENE</p>' +
+  MENU.map(([label, page, frag]) =>
+    '<a href="#' + page + '" data-goto="' + page + '"' + (frag ? ' data-scroll="' + frag + '"' : '') + '>' + label + '</a>'
+  ).join('') +
+  '<p class="mnav-foot">On-device AI &nbsp;·&nbsp; iQOO 15</p>';
+document.body.appendChild(drawer);
+
+let lockedAt = 0;
+function setMenu(open){
+  if (open === drawer.classList.contains('open')) return;
+  const b = document.body;
+  if (open){
+    lockedAt = scrollY;
+    b.style.top = -lockedAt + 'px';
+    b.classList.add('menu-open');
+  } else if (b.classList.contains('menu-open')){
+    b.classList.remove('menu-open');
+    b.style.top = '';
+    scrollTo(0, lockedAt);
+  }
+  drawer.classList.toggle('open', open);
+  document.querySelectorAll('.navtoggle').forEach(b => {
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+}
+const closeMenu = () => setMenu(false);
+
+function buildMenu(root){
+  const header = root.querySelector('header');
+  if (!header || header.querySelector('.navtoggle')) return;
+  const btn = document.createElement('button');
+  btn.className = 'navtoggle';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Open menu');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-controls', 'selene-menu');
+  btn.innerHTML = '<span></span><span></span><span></span>';
+  btn.addEventListener('click', () => setMenu(!drawer.classList.contains('open')));
+  header.appendChild(btn);
+}
+
+drawer.id = 'selene-menu';
+addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+matchMedia('(min-width:821px)').addEventListener?.('change', e => { if (e.matches) closeMenu(); });
+
+/* ---------- replay the CSS entry animations when a page is first opened ---------- */
+const INTRO = '.hero-bg,.hero-content>*,.hero-index,.hero-tag,.hero-badge,' +
+              '.thero-content>*,.thero-tag-top,.thero-tag-bottom,' +
+              '.ahero-bg,.ahero-content>*,.ahero-side,.ahero-powered';
+function replayIntro(root){
+  if (reduced()) return;
+  root.querySelectorAll(INTRO).forEach(el => {
+    el.style.animation = 'none';
+    void el.offsetWidth;          // force reflow so the animation restarts
+    el.style.animation = '';
+  });
+}
+
+/* ---------- per-page setup (runs once per page, scoped to that page) ---------- */
+const done = {};
+
+function setupPage(name){
+  const root = document.querySelector('.page[data-page="' + name + '"]');
+  if (!root) return;
+  wireReveals(root);              // idempotent, safe to re-run
+  if (done[name]) return;
+  done[name] = true;
+
+  buildMenu(root);
+  replayIntro(root);
+  root.querySelectorAll('.counter').forEach(el => countIO.observe(el));
+
+  if (name === 'home'){
+    wireNav(root, name, '.nav', 'nav-scrolled');
+    wireGlow(root, '.card');
+    wireHeroDrift(root, name, '.hero-content');
+    wireParallax(root, name);
+    const idx = root.querySelectorAll('.hero-index li');
+    if (idx.length){
+      let i = 0;
+      setInterval(() => {
+        if (document.body.dataset.page !== name) return;
+        idx[i].classList.remove('active');
+        i = (i + 1) % idx.length;
+        idx[i].classList.add('active');
+      }, 2200);
+    }
+  }
+
+  if (name === 'technology'){
+    wireNav(root, name, '.nav', 'nav-scrolled');
+    wireGlow(root, '.pillar');
+    wireHeroDrift(root, name, '.thero-content');
+    wireParallax(root, name);
+  }
+
+  if (name === 'architecture'){
+    wireNav(root, name, '.anav', 'scrolled');
+    wireHeroDrift(root, name, '.ahero-content');
+    wireParallax(root, name);
+    const idx = root.querySelectorAll('.stack-index li');
+    const layers = ['#sensor', '#ai', '#app'].map(s => root.querySelector(s)).filter(Boolean);
+    if (idx.length && layers.length){
+      const lio = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const n = layers.indexOf(e.target);
+        idx.forEach((li, i) => li.classList.toggle('active', i === n));
+      }), { threshold: .4 });
+      layers.forEach(l => lio.observe(l));
+    }
+  }
+}
+
+/* ---------- router ---------- */
 function show(name, frag){
   if (!PAGES.includes(name)) name = 'home';
-  if (document.body.dataset.page === name && !frag) return;
+  closeMenu();
+  const same = document.body.dataset.page === name;
+  if (same && !frag) return;
+
   document.querySelectorAll('.page').forEach(p => p.classList.toggle('is-active', p.dataset.page === name));
   document.body.dataset.page = name;
+  drawer.classList.toggle('arch', name === 'architecture');
   if (history.replaceState) history.replaceState(null, '', '#' + name);
-  if (inits[name]) { inits[name](); inits[name] = null; }
-  if (frag) {
+
+  setupPage(name);
+
+  if (frag){
     const t = document.getElementById(frag);
-    if (t) { t.scrollIntoView({behavior:'smooth'}); return; }
+    if (t){
+      // let the page paint before measuring the target
+      requestAnimationFrame(() => t.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' }));
+      return;
+    }
   }
-  scrollTo(0, 0);
+  scrollTo({ top: 0, behavior: 'auto' });
 }
+
 addEventListener('click', e => {
   const a = e.target.closest('a[data-goto]');
   if (!a) return;
@@ -1164,64 +1663,7 @@ addEventListener('click', e => {
 });
 addEventListener('hashchange', () => show(location.hash.slice(1)));
 
-inits.home = function(){
-
-// scroll reveal
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .18 });
-document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => io.observe(el));
-
-// number counters
-const cio = new IntersectionObserver(es => es.forEach(e => {
-  if (!e.isIntersecting) return; cio.unobserve(e.target);
-  const el = e.target, to = +el.dataset.to, t0 = performance.now();
-  const tick = now => { const p = Math.min(1, (now - t0) / 1400), k = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * k); if (p < 1) requestAnimationFrame(tick); };
-  requestAnimationFrame(tick);
-}), { threshold: .6 });
-document.querySelectorAll('.counter').forEach(el => cio.observe(el));
-
-// card cursor glow
-document.querySelectorAll('.card').forEach(c => c.addEventListener('mousemove', e => {
-  const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-}));
-
-// nav glass on scroll + hero parallax
-const nav = document.querySelector('.nav'), heroBg = document.querySelector('.hero-bg'), heroContent = document.querySelector('.hero-content');
-addEventListener('scroll', () => {
-  const y = scrollY; nav.classList.toggle('nav-scrolled', y > 40);
-  if (y < 900) { heroBg.style.transform = 'translateY(' + (y * .18) + 'px)'; heroContent.style.transform = 'translateY(' + (y * .08) + 'px)'; heroContent.style.opacity = Math.max(0, 1 - y / 700); }
-}, { passive: true });
-heroBg.addEventListener('animationend', () => { heroBg.style.animation = 'none'; });
-
-// cycling hero index marker
-const idx = document.querySelectorAll('.hero-index li'); let i = 0;
-setInterval(() => { idx[i].classList.remove('active'); i = (i + 1) % idx.length; idx[i].classList.add('active'); }, 2200);
-
-};
-inits.technology = function(){
-
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
-document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => io.observe(el));
-const nav = document.querySelector('.nav');
-addEventListener('scroll', () => nav.classList.toggle('nav-scrolled', scrollY > 40), { passive: true });
-document.querySelectorAll('.pillar').forEach(c => c.addEventListener('mousemove', e => {
-  const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-}));
-
-};
-inits.architecture = function(){
-
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
-document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => io.observe(el));
-const nav = document.querySelector('.anav');
-addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), { passive: true });
-// stack index follows the layer in view
-const idx = document.querySelectorAll('.stack-index li'), layers = ['#sensor', '#ai', '#app'].map(s => document.querySelector(s));
-const lio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const n = layers.indexOf(e.target); idx.forEach((li, i) => li.classList.toggle('active', i === n)); } }), { threshold: .4 });
-layers.forEach(l => lio.observe(l));
-
-};
 show(location.hash.slice(1) || 'home');
-
 </script>
 </body>
 </html>
